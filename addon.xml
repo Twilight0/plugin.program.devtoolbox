@@ -2,7 +2,7 @@
 <addon id="plugin.program.devtoolbox" name="Dev ToolBox" version="1.0.0" provider-name="Twilight0">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.pyqrcode" version="1.2.1"/>
+        <import addon="script.module.qrcode" version="6.1.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="router.py">
         <provides>executable</provides>

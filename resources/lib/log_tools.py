@@ -85,20 +85,20 @@ def upload_text_to_paste(text):
     return None
 
 
-def ensure_pyqrcode_imported():
-    """Ensure pyqrcode module is accessible from python sys.path."""
+def ensure_qrcode_imported():
+    """Ensure qrcode module is accessible from python sys.path."""
     try:
-        import pyqrcode
-        return pyqrcode
+        import qrcode
+        return qrcode
     except ImportError:
         pass
 
-    pyqrcode_dir = xbmcvfs.translatePath("special://home/addons/script.module.pyqrcode/lib")
-    if os.path.exists(pyqrcode_dir) and pyqrcode_dir not in sys.path:
-        sys.path.insert(0, pyqrcode_dir)
+    qrcode_dir = xbmcvfs.translatePath("special://home/addons/script.module.qrcode/lib")
+    if os.path.exists(qrcode_dir) and qrcode_dir not in sys.path:
+        sys.path.insert(0, qrcode_dir)
         try:
-            import pyqrcode
-            return pyqrcode
+            import qrcode
+            return qrcode
         except ImportError:
             pass
     return None
@@ -110,14 +110,17 @@ def show_qr_dialog(url):
     qr_img_path = os.path.join(temp_dir, "devtoolbox_qr.png")
 
     generated = False
-    pyqrcode_mod = ensure_pyqrcode_imported()
-    if pyqrcode_mod:
+    qrcode_mod = ensure_qrcode_imported()
+    if qrcode_mod:
         try:
-            qr = pyqrcode_mod.create(url)
-            qr.png(qr_img_path, scale=8)
+            qr = qrcode_mod.QRCode(box_size=8, border=2)
+            qr.add_data(url)
+            qr.make(fit=True)
+            img = qr.make_image(fill_color="black", back_color="white")
+            img.save(qr_img_path)
             generated = True
         except Exception as e:
-            xbmc.log(f"[DevToolbox] pyqrcode creation error: {e}", xbmc.LOGERROR)
+            xbmc.log(f"[DevToolbox] qrcode creation error: {e}", xbmc.LOGERROR)
 
     if not generated:
         try:
