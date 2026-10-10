@@ -27,6 +27,15 @@ from resources.lib.theme_manager import (
     sync_theme_if_needed,
     apply_theme
 )
+from resources.lib.official_kodi import (
+    render_official_kodi_root,
+    render_official_kodi_list,
+    handle_official_kodi_search,
+    direct_install_prompt,
+    install_addon_zip,
+    get_kodi_codename,
+    get_cached_addons_list
+)
 
 
 ADDON = xbmcaddon.Addon()
@@ -109,6 +118,13 @@ def build_menu(handle, base_url):
             "Edit key mappings, actions, and hotkeys using custom XML interface",
             f"{base_url}?action=keymap_editor",
             False
+        ),
+        (
+            "menu_official_kodi",
+            "[COLOR FF00D4FF]Official Kodi Dependency / Addon Installer[/COLOR]",
+            "Search and install dependencies (script.module.*) and addons directly from mirrors.kodi.tv",
+            f"{base_url}?action=official_kodi",
+            True
         ),
         (
             "menu_change_theme",
@@ -236,6 +252,27 @@ def run():
             apply_theme(theme_id)
         else:
             change_theme_dialog()
+    elif action == "official_kodi":
+        render_official_kodi_root(handle, base_url)
+    elif action == "official_kodi_browse":
+        codename = params.get("codename") or get_kodi_codename()[0]
+        filter_type = params.get("type", "modules")
+        render_official_kodi_list(handle, base_url, codename, filter_type=filter_type)
+    elif action == "official_kodi_search":
+        codename = params.get("codename") or get_kodi_codename()[0]
+        handle_official_kodi_search(handle, base_url, codename)
+    elif action == "official_kodi_direct":
+        direct_install_prompt()
+    elif action == "official_kodi_install":
+        addon_id = params.get("addonid")
+        codename = params.get("codename") or get_kodi_codename()[0]
+        if addon_id:
+            install_addon_zip(codename, addon_id)
+    elif action == "official_kodi_refresh":
+        codename = params.get("codename") or get_kodi_codename()[0]
+        get_cached_addons_list(codename, force_refresh=True)
+        xbmcgui.Dialog().notification("Kodi Mirror", f"Refreshed {codename} index", xbmcgui.NOTIFICATION_INFO, 2000, sound=False)
+        xbmc.executebuiltin("Container.Refresh")
 
 
 if __name__ == "__main__":

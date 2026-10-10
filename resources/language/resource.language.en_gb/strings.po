@@ -105,3 +105,7 @@ msgstr ""
 msgctxt "#30022"
 msgid "Restart Kodi Application"
 msgstr ""
+
+msgctxt "#30023"
+msgid "Official Kodi Dependency / Addon Installer"
+msgstr ""

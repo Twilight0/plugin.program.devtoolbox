@@ -17,6 +17,7 @@ plugin.program.devtoolbox/
 ├── 💻 In-GUI Code & Text Editor      ──> Custom WindowXML with syntax styling & live runner
 ├── ⌨️  Visual Keymap Editor           ──> Custom WindowXML hotkey mapper across all scopes
 ├── 🔍 Safe Addon Inspector           ──> Crash-proof custom WindowXML addon metadata viewer
+├── 📦 Official Kodi Installer        ──> Direct dependency (script.module.*) downloader from mirrors.kodi.tv
 ├── 📜 Kodi Log Tools & QR Uploader   ──> Live log viewer & WindowXML QR code mobile pairing
 ├── ⚡ Live Debug & Skin Toggles      ──> Instant debug overlay, skin reload & dirty regions
 ├── 🎨 Artwork Theme Engine           ──> Dynamic texture cache path isolation & asset syncing
@@ -71,7 +72,21 @@ Kodi's native C++ `DialogAddonInfo` can crash when inspecting non-standard or vi
 
 <br>
 
-### 📜 4. Log Viewer & QR Code Uploader (`script-devtoolbox-qr.xml`)
+### 📦 4. Official Kodi Dependency & Addon Installer
+
+Kodi's built-in Add-on Manager hides module dependencies (`script.module.*`) from the user interface. Dev Toolbox connects directly to the official mirror:
+
+- 🌐 **Dynamic Version Codename Querying**: Automatically queries [`https://mirrors.kodi.tv/addons/`](https://mirrors.kodi.tv/addons/) to discover valid mirror branch directories (`omega`, `nexus`, `matrix`, `piers`, etc.) and matches your active Kodi version.
+
+- 📥 **Direct Dependency Installation**: Browse and install any `script.module.*` dependency package directly without requiring third-party repository workarounds.
+
+- 🔍 **Instant Search & Direct ID Input**: Filter across thousands of official repository addons or enter an exact ID (e.g. `script.module.requests`) to fetch and install the latest available ZIP archive with real-time download progress.
+
+- ⚡ **Auto-Enable & Registration**: Automatically extracts packages into `special://home/addons/`, triggers `UpdateLocalAddons`, and enables the module immediately.
+
+<br>
+
+### 📜 5. Log Viewer & QR Code Uploader (`script-devtoolbox-qr.xml`)
 
 Inspect Kodi logs without navigating remote file systems:
 
@@ -83,7 +98,7 @@ Inspect Kodi logs without navigating remote file systems:
 
 <br>
 
-### ⚡ 5. Developer & Skin Debug Toggles
+### ⚡ 6. Developer & Skin Debug Toggles
 
 Quick access to critical Kodi developer switches:
 
@@ -97,7 +112,7 @@ Quick access to critical Kodi developer switches:
 
 <br>
 
-### 🎨 6. Dynamic Theme Engine & Texture Cache Isolation
+### 🎨 7. Dynamic Theme Engine & Texture Cache Isolation
 
 Kodi's internal texture cache (`Textures13.db`) caches images based on file path. Dev Toolbox eliminates stale cache issues by isolating artwork across distinct paths in [`resources/media/`](resources/media/):
 
@@ -112,7 +127,7 @@ Kodi's internal texture cache (`Textures13.db`) caches images based on file path
 
 <br>
 
-### ⚙️ 7. Customization & Global Access
+### ⚙️ 8. Customization & Global Access
 
 - 🌐 **Global Context Menu**: Right-click or press `C` / long-press anywhere inside Kodi to open **Dev Toolbox** immediately.
 
