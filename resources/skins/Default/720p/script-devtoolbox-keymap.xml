@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <controls>
+        <!-- Background Dim / Overlay -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/backgrounds/black.png</texture>
+            <colordiffuse>E6000000</colordiffuse>
+        </control>
+
+        <!-- Main Window Container -->
+        <control type="group">
+            <left>60</left>
+            <top>40</top>
+            <width>1160</width>
+            <height>640</height>
+
+            <!-- Card Background -->
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1160</width>
+                <height>640</height>
+                <texture border="10">special://skin/media/white.png</texture>
+                <colordiffuse>FF141923</colordiffuse>
+            </control>
+
+            <!-- Window Header -->
+            <control type="label" id="1">
+                <left>30</left>
+                <top>20</top>
+                <width>800</width>
+                <height>35</height>
+                <font>font14_title</font>
+                <label>Keymap Editor [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <control type="label" id="2">
+                <left>30</left>
+                <top>55</top>
+                <width>800</width>
+                <height>25</height>
+                <font>font12</font>
+                <label>Select a key binding to edit its Kodi Action or switch scope</label>
+                <textcolor>FF8A9BA8</textcolor>
+            </control>
+
+            <!-- Scope Switcher Button -->
+            <control type="button" id="200">
+                <left>30</left>
+                <top>88</top>
+                <width>320</width>
+                <height>36</height>
+                <font>font12_title</font>
+                <label>Scope: [COLOR FFFFA800]global[/COLOR] (Click to change)</label>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                <onleft>201</onleft>
+                <onright>201</onright>
+                <onup>206</onup>
+                <ondown>100</ondown>
+            </control>
+
+            <!-- Keymap List -->
+            <control type="list" id="100">
+                <left>30</left>
+                <top>130</top>
+                <width>780</width>
+                <height>460</height>
+                <onleft>201</onleft>
+                <onright>201</onright>
+                <onup>200</onup>
+                <ondown>100</ondown>
+                <pagecontrol>110</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="44" width="780">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>780</width>
+                        <height>42</height>
+                        <texture>special://home/addons/plugin.program.devtoolbox/resources/media/item_bg.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>15</left>
+                        <top>8</top>
+                        <width>220</width>
+                        <height>26</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="label">
+                        <left>250</left>
+                        <top>8</top>
+                        <width>500</width>
+                        <height>26</height>
+                        <font>font12</font>
+                        <textcolor>FF00D4FF</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="44" width="780">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>780</width>
+                        <height>42</height>
+                        <texture>special://home/addons/plugin.program.devtoolbox/resources/media/item_focus.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>15</left>
+                        <top>8</top>
+                        <width>220</width>
+                        <height>26</height>
+                        <font>font12_title</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="label">
+                        <left>250</left>
+                        <top>8</top>
+                        <width>500</width>
+                        <height>26</height>
+                        <font>font12_title</font>
+                        <textcolor>FFFFA800</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Scrollbar for List -->
+            <control type="scrollbar" id="110">
+                <left>815</left>
+                <top>130</top>
+                <width>15</width>
+                <height>460</height>
+                <texturesliderbackground>special://skin/media/white.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/white.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/white.png</texturesliderbarfocus>
+                <colordiffuse>30FFFFFF</colordiffuse>
+                <onleft>100</onleft>
+                <onright>201</onright>
+            </control>
+
+            <!-- Right Action Panel -->
+            <control type="grouplist" id="199">
+                <left>850</left>
+                <top>88</top>
+                <width>280</width>
+                <height>502</height>
+                <itemgap>10</itemgap>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <onup>199</onup>
+                <ondown>199</ondown>
+
+                <control type="button" id="201">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Add Key Mapping</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="202">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Edit Selected Action</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="203">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Remove Selected Key</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="207">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Switch Scope / Window</label>
+                    <textcolor>FFFFA800</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="204">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Reset Current Scope Keys</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="205">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Save &amp; Reload Keymaps</label>
+                    <textcolor>FF55FF55</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="206">
+                    <width>280</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>Close Window</label>
+                    <textcolor>FFAAAAAA</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

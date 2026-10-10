@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings version="1">
+	<section id="plugin.program.devtoolbox">
+		<category id="appearance" label="30000">
+			<group id="1" label="30001">
+				<setting id="theme" type="string" label="30002" help="30008">
+					<level>0</level>
+					<default>default</default>
+					<constraints>
+						<options>
+							<option label="30003">default</option>
+							<option label="30004">cyber</option>
+							<option label="30005">modern</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30006</heading>
+					</control>
+				</setting>
+				<setting id="change_theme_btn" type="action" label="30007" help="30008">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.program.devtoolbox/?action=change_theme)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="menu_items" label="30010">
+			<group id="1" label="30011">
+				<setting id="menu_editor" type="boolean" label="30012">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_toggle_debug" type="boolean" label="30013">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_toggle_skin_debug" type="boolean" label="30014">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_reload_skin" type="boolean" label="30015">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_addons_manager" type="boolean" label="30016">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_log_view" type="boolean" label="30017">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_log_view_errors" type="boolean" label="30018">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_log_upload" type="boolean" label="30019">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_keymap_editor" type="boolean" label="30020">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_change_theme" type="boolean" label="30021">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="menu_restart_kodi" type="boolean" label="30022">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
+	</section>
+</settings>

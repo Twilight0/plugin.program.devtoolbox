@@ -1,0 +1,107 @@
+# Addon Name: Dev Toolbox
+# Addon id: plugin.program.devtoolbox
+# Addon Provider: Twilight0
+msgid ""
+msgstr ""
+"Project-Id-Version: Dev Toolbox\n"
+"POT-Creation-Date: 2026-10-10 13:50+0000\n"
+"PO-Revision-Date: 2026-10-10 13:50+0000\n"
+"Last-Translator: Twilight0\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "Appearance"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Artwork Theme"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Active Theme"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Default (Neon Cyber Suite)"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Cyber Workstation HUD (Set 1)"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Modern Glassmorphism (Set 2)"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Select Artwork Theme"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Change Artwork Theme..."
+msgstr ""
+
+msgctxt "#30008"
+msgid "Interactively preview and apply a new artwork theme"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Theme set to: %s. Restart Kodi to apply addon.xml changes."
+msgstr ""
+
+msgctxt "#30010"
+msgid "Main Menu Items"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Menu Items Visibility"
+msgstr ""
+
+msgctxt "#30012"
+msgid "In-GUI Code & Text Editor"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Toggle Kodi Debug Logging"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Toggle Skin Debugging"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Reload Skin"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Addon Manager & Inspector"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Kodi Log Viewer"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Kodi Log Viewer (Errors Only)"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Upload Log & QR Code"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Visual Keymap Editor"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Switch Artwork Theme"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Restart Kodi Application"
+msgstr ""

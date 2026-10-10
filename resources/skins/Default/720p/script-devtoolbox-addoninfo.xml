@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <controls>
+        <!-- Background Dim / Overlay -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/backgrounds/black.png</texture>
+            <colordiffuse>E6000000</colordiffuse>
+        </control>
+
+        <!-- Main Window Container -->
+        <control type="group">
+            <left>40</left>
+            <top>25</top>
+            <width>1200</width>
+            <height>670</height>
+
+            <!-- Card Background with optional Fanart -->
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1200</width>
+                <height>670</height>
+                <texture border="10">special://skin/media/white.png</texture>
+                <colordiffuse>FF141923</colordiffuse>
+            </control>
+
+            <!-- Fanart Image Display (Dimmed Background Backdrop) -->
+            <control type="image" id="9">
+                <left>0</left>
+                <top>0</top>
+                <width>1200</width>
+                <height>670</height>
+                <aspectratio>scale</aspectratio>
+                <colordiffuse>33FFFFFF</colordiffuse>
+                <visible>true</visible>
+            </control>
+
+            <!-- Dialog Header -->
+            <control type="label" id="1">
+                <left>35</left>
+                <top>15</top>
+                <width>800</width>
+                <height>35</height>
+                <font>font14_title</font>
+                <label>Addon Details [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <!-- Larger 180x180 Icon / Preview -->
+            <control type="image" id="10">
+                <left>35</left>
+                <top>60</top>
+                <width>180</width>
+                <height>180</height>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <!-- Metadata labels -->
+            <control type="label" id="11">
+                <left>235</left>
+                <top>60</top>
+                <width>930</width>
+                <height>35</height>
+                <font>font14_title</font>
+                <textcolor>FF00D4FF</textcolor>
+            </control>
+
+            <control type="label" id="12">
+                <left>235</left>
+                <top>98</top>
+                <width>930</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>FFFFA800</textcolor>
+            </control>
+
+            <control type="label" id="13">
+                <left>235</left>
+                <top>128</top>
+                <width>930</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>FF8A9BA8</textcolor>
+            </control>
+
+            <control type="label" id="14">
+                <left>235</left>
+                <top>158</top>
+                <width>930</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>FF55FF55</textcolor>
+            </control>
+
+            <!-- Fanart preview thumb box -->
+            <control type="image" id="15">
+                <left>950</left>
+                <top>60</top>
+                <width>215</width>
+                <height>120</height>
+                <aspectratio>keep</aspectratio>
+                <texture border="4">special://skin/media/white.png</texture>
+            </control>
+
+            <!-- Description / Info Text Box with Autoscroll -->
+            <control type="textbox" id="20">
+                <left>35</left>
+                <top>255</top>
+                <width>1115</width>
+                <height>335</height>
+                <font>font12</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <pagecontrol>21</pagecontrol>
+                <autoscroll delay="3000" repeat="2000">true</autoscroll>
+            </control>
+
+            <!-- Scrollbar for Text Box -->
+            <control type="scrollbar" id="21">
+                <left>1160</left>
+                <top>255</top>
+                <width>12</width>
+                <height>335</height>
+                <texturesliderbackground>special://skin/media/white.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/white.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/white.png</texturesliderbarfocus>
+                <colordiffuse>30FFFFFF</colordiffuse>
+                <onleft>20</onleft>
+                <onright>100</onright>
+            </control>
+
+            <!-- Bottom Action Buttons -->
+            <control type="grouplist" id="100">
+                <left>35</left>
+                <top>605</top>
+                <width>1130</width>
+                <height>45</height>
+                <itemgap>15</itemgap>
+                <orientation>horizontal</orientation>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <onup>20</onup>
+                <ondown>20</ondown>
+
+                <control type="button" id="101">
+                    <width>265</width>
+                    <height>42</height>
+                    <font>font12</font>
+                    <label>Open Settings</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="102">
+                    <width>265</width>
+                    <height>42</height>
+                    <font>font12</font>
+                    <label>Toggle Enable/Disable</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="103">
+                    <width>265</width>
+                    <height>42</height>
+                    <font>font12</font>
+                    <label>Edit addon.xml</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <control type="button" id="104">
+                    <width>265</width>
+                    <height>42</height>
+                    <font>font12</font>
+                    <label>Close</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <controls>
+        <!-- Background Dim -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/backgrounds/black.png</texture>
+            <colordiffuse>E6000000</colordiffuse>
+        </control>
+
+        <!-- Main Card Container -->
+        <control type="group">
+            <left>320</left>
+            <top>70</top>
+            <width>640</width>
+            <height>580</height>
+
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>640</width>
+                <height>580</height>
+                <texture border="10">special://skin/media/white.png</texture>
+                <colordiffuse>FF141923</colordiffuse>
+            </control>
+
+            <!-- Title -->
+            <control type="label">
+                <left>30</left>
+                <top>25</top>
+                <width>580</width>
+                <height>35</height>
+                <font>font14_title</font>
+                <label>Log Uploaded Successfully</label>
+                <textcolor>FFFFFFFF</textcolor>
+                <align>center</align>
+            </control>
+
+            <!-- Subtitle -->
+            <control type="label">
+                <left>30</left>
+                <top>65</top>
+                <width>580</width>
+                <height>25</height>
+                <font>font12</font>
+                <label>Scan QR code with your mobile camera or open the link below:</label>
+                <textcolor>FF8A9BA8</textcolor>
+                <align>center</align>
+            </control>
+
+            <!-- QR Code Image -->
+            <control type="image" id="10">
+                <left>170</left>
+                <top>105</top>
+                <width>300</width>
+                <height>300</height>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <!-- URL Label -->
+            <control type="label" id="11">
+                <left>30</left>
+                <top>425</top>
+                <width>580</width>
+                <height>35</height>
+                <font>font13_title</font>
+                <textcolor>FF00D4FF</textcolor>
+                <align>center</align>
+            </control>
+
+            <!-- Close Button -->
+            <control type="button" id="100">
+                <left>220</left>
+                <top>495</top>
+                <width>200</width>
+                <height>45</height>
+                <font>font12_title</font>
+                <label>Done / Close</label>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF00D4FF</focusedcolor>
+                <align>center</align>
+                <onup>100</onup>
+                <ondown>100</ondown>
+                <onleft>100</onleft>
+                <onright>100</onright>
+            </control>
+        </control>
+    </controls>
+</window>
