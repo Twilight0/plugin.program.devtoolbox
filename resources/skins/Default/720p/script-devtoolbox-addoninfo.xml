@@ -47,7 +47,7 @@
                 <width>800</width>
                 <height>35</height>
                 <font>font14_title</font>
-                <label>Addon Details [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
+                <label>$ADDON[plugin.program.devtoolbox 30030] [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
                 <textcolor>FFFFFFFF</textcolor>
             </control>
 
@@ -150,7 +150,7 @@
                     <width>265</width>
                     <height>42</height>
                     <font>font12</font>
-                    <label>Open Settings</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30031]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -161,7 +161,7 @@
                     <width>265</width>
                     <height>42</height>
                     <font>font12</font>
-                    <label>Toggle Enable/Disable</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30032]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -172,7 +172,7 @@
                     <width>265</width>
                     <height>42</height>
                     <font>font12</font>
-                    <label>Edit addon.xml</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30033]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -183,7 +183,7 @@
                     <width>265</width>
                     <height>42</height>
                     <font>font12</font>
-                    <label>Close</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30034]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>

@@ -86,11 +86,15 @@ Kodi's built-in Add-on Manager hides module dependencies (`script.module.*`) fro
 
 <br>
 
-### 📜 5. Log Viewer & QR Code Uploader (`script-devtoolbox-qr.xml`)
+### 📜 5. Log Viewer & QR Code Uploader (`script-devtoolbox-logviewer.xml` & `script-devtoolbox-qr.xml`)
 
 Inspect Kodi logs without navigating remote file systems:
 
-- 📋 **Dual Log Modes**: Read full `kodi.log` or filter strictly for `ERROR`, `WARNING`, and `EXCEPTION` events.
+- 🎭 **Dual Viewer Styles (Configurable in Appearance)**:
+  - 🖥️ **Interactive Code Viewer (`script-devtoolbox-logviewer.xml`)**: Custom WindowXML displaying numbered lines, syntax coloring (errors in red, warnings in yellow, info in cyan), search filtering, line inspection, and direct log refresh.
+  - 📄 **Traditional TextViewer Dialog**: Standard native Kodi modal textviewer for minimalist reading.
+
+- 📋 **Log Filtering**: Read full `kodi.log` or filter strictly for `ERROR`, `WARNING`, and `EXCEPTION` events with live toggle.
 
 - ☁️ **Cloud Pastebin Uploader**: Uploads logs anonymously to secure paste services (`paste.kodi.tv` / `hastebin`).
 
@@ -108,7 +112,7 @@ Quick access to critical Kodi developer switches:
 
 - 🔄 **Instant Skin Reload**: Reload skin cache immediately (`ReloadSkin`) to see UI changes instantly.
 
-- 🔁 **Kodi Restart**: Safely restart the Kodi application directly from the menu.
+- 🔁 **Kodi Restart & Quit**: Safely restart or quit the Kodi application directly from the menu.
 
 <br>
 

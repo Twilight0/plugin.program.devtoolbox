@@ -3,8 +3,9 @@
 Dev Toolbox - Addon Manager & Inspector
 Lists installed addons with enabled/disabled states and provides direct actions (Settings, Info, Enable/Disable)
 """
-import json
+
 import os
+import urllib.parse
 import xbmc
 import xbmcgui
 import xbmcplugin

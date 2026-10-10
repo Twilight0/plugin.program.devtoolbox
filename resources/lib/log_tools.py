@@ -27,30 +27,52 @@ def get_log_file_path():
 
 
 def view_kodi_log(filter_errors=False):
-    """View log lines with optional ERROR/WARNING filtering in a scrollable dialog."""
+    """
+    View log lines with optional ERROR/WARNING filtering.
+    Checks the 'log_viewer_style' setting under Appearance:
+      - 'traditional': opens native xbmcgui.Dialog().textviewer()
+      - 'editor': opens rich WindowXML editor-style viewer with numbered lines, color syntax & search
+    """
     log_path = get_log_file_path()
     if not log_path or not os.path.exists(log_path):
         xbmcgui.Dialog().ok("Dev Toolbox", "Could not locate kodi.log on this system.")
         return
 
-    try:
-        with open(log_path, "r", encoding="utf-8", errors="replace") as f:
-            lines = f.readlines()
-    except Exception as e:
-        xbmcgui.Dialog().ok("Dev Toolbox", f"Failed to read log file: {e}")
-        return
+    addon = xbmcaddon.Addon()
+    viewer_style = addon.getSetting("log_viewer_style") or "editor"
 
-    lines = lines[-1500:]
-    if filter_errors:
-        lines = [line for line in lines if "ERROR" in line or "WARNING" in line or "EXCEPTION" in line]
+    if viewer_style == "traditional":
+        try:
+            with open(log_path, "r", encoding="utf-8", errors="replace") as f:
+                lines = f.readlines()
+        except Exception as e:
+            xbmcgui.Dialog().ok("Dev Toolbox", f"Failed to read log file: {e}")
+            return
 
-    if not lines:
-        xbmcgui.Dialog().ok("Dev Toolbox", "No matching log entries found.")
-        return
+        lines = lines[-1500:]
+        if filter_errors:
+            lines = [line for line in lines if "ERROR" in line or "WARNING" in line or "EXCEPTION" in line]
 
-    content = "".join(lines)
-    title = "Kodi Log [ERRORS ONLY]" if filter_errors else "Kodi Log Viewer (Latest)"
-    xbmcgui.Dialog().textviewer(title, content)
+        if not lines:
+            xbmcgui.Dialog().ok("Dev Toolbox", "No matching log entries found.")
+            return
+
+        content = "".join(lines)
+        title = "Kodi Log [ERRORS ONLY]" if filter_errors else "Kodi Log Viewer (Latest)"
+        xbmcgui.Dialog().textviewer(title, content)
+    else:
+        from .windows.log_viewer import LogViewerWindow
+        addon_path = addon.getAddonInfo("path")
+        win = LogViewerWindow(
+            "script-devtoolbox-logviewer.xml",
+            addon_path,
+            "Default",
+            "720p",
+            log_path=log_path,
+            filter_errors=filter_errors
+        )
+        win.doModal()
+        del win
 
 
 def upload_text_to_paste(text):

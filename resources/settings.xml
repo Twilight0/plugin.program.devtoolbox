@@ -27,6 +27,19 @@
 						<close>true</close>
 					</control>
 				</setting>
+				<setting id="log_viewer_style" type="string" label="30060" help="30063">
+					<level>0</level>
+					<default>editor</default>
+					<constraints>
+						<options>
+							<option label="30061">traditional</option>
+							<option label="30062">editor</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30064</heading>
+					</control>
+				</setting>
 			</group>
 		</category>
 		<category id="menu_items" label="30010">
@@ -57,11 +70,6 @@
 					<control type="toggle"/>
 				</setting>
 				<setting id="menu_log_view" type="boolean" label="30017">
-					<level>0</level>
-					<default>true</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="menu_log_view_errors" type="boolean" label="30018">
 					<level>0</level>
 					<default>true</default>
 					<control type="toggle"/>

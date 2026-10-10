@@ -36,7 +36,7 @@
                 <width>800</width>
                 <height>35</height>
                 <font>font14_title</font>
-                <label>Keymap Editor [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
+                <label>$ADDON[plugin.program.devtoolbox 30047] [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
                 <textcolor>FFFFFFFF</textcolor>
             </control>
 
@@ -46,7 +46,7 @@
                 <width>800</width>
                 <height>25</height>
                 <font>font12</font>
-                <label>Select a key binding to edit its Kodi Action or switch scope</label>
+                <label>$ADDON[plugin.program.devtoolbox 30048]</label>
                 <textcolor>FF8A9BA8</textcolor>
             </control>
 
@@ -166,7 +166,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Add Key Mapping</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30050]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -177,7 +177,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Edit Selected Action</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30051]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -188,7 +188,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Remove Selected Key</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30052]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -199,7 +199,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Switch Scope / Window</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30053]</label>
                     <textcolor>FFFFA800</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -210,7 +210,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Reset Current Scope Keys</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30054]</label>
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -221,7 +221,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Save &amp; Reload Keymaps</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30055]</label>
                     <textcolor>FF55FF55</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
@@ -232,7 +232,7 @@
                     <width>280</width>
                     <height>44</height>
                     <font>font12</font>
-                    <label>Close Window</label>
+                    <label>$ADDON[plugin.program.devtoolbox 30056]</label>
                     <textcolor>FFAAAAAA</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>

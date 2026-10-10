@@ -131,7 +131,8 @@ class KeymapWindow(xbmcgui.WindowXML):
     def update_scope_button(self):
         try:
             scope_btn = self.getControl(BTN_SCOPE)
-            scope_btn.setLabel(f"Scope: [COLOR FFFFA800]{self.current_scope}[/COLOR] (Click to change)")
+            label_tmpl = xbmcaddon.Addon().getLocalizedString(30049) or "Scope: [COLOR FFFFA800]%s[/COLOR] (Click to change)"
+            scope_btn.setLabel(label_tmpl % self.current_scope)
         except Exception:
             pass
 

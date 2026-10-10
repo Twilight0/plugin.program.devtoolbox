@@ -103,7 +103,7 @@ msgid "Switch Artwork Theme"
 msgstr ""
 
 msgctxt "#30022"
-msgid "Restart Kodi Application"
+msgid "Restart kodi"
 msgstr ""
 
 msgctxt "#30023"
@@ -111,5 +111,168 @@ msgid "Official Kodi Dependency / Addon Installer"
 msgstr ""
 
 msgctxt "#30024"
-msgid "Quit Kodi Application"
+msgid "Quit Kodi"
+msgstr ""
+
+# --- Custom WindowXML Labels (30030 - 30065) ---
+
+# script-devtoolbox-addoninfo.xml
+msgctxt "#30030"
+msgid "Addon Details"
+msgstr ""
+
+msgctxt "#30031"
+msgid "Open Settings"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Toggle Enable/Disable"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Edit addon.xml"
+msgstr ""
+
+msgctxt "#30034"
+msgid "Close"
+msgstr ""
+
+# script-devtoolbox-editor.xml
+msgctxt "#30035"
+msgid "Code & Script Editor"
+msgstr ""
+
+msgctxt "#30036"
+msgid "Apply Line"
+msgstr ""
+
+msgctxt "#30037"
+msgid "Edit Whole File"
+msgstr ""
+
+msgctxt "#30038"
+msgid "Insert Line Above"
+msgstr ""
+
+msgctxt "#30039"
+msgid "Insert Line Below"
+msgstr ""
+
+msgctxt "#30040"
+msgid "Delete Selected Line"
+msgstr ""
+
+msgctxt "#30041"
+msgid "Insert API Completion"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Find / Replace Text"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Open File..."
+msgstr ""
+
+msgctxt "#30044"
+msgid "Save File"
+msgstr ""
+
+msgctxt "#30045"
+msgid "Run Script (Test)"
+msgstr ""
+
+msgctxt "#30046"
+msgid "Close Editor"
+msgstr ""
+
+# script-devtoolbox-keymap.xml
+msgctxt "#30047"
+msgid "Keymap Editor"
+msgstr ""
+
+msgctxt "#30048"
+msgid "Select a key binding to edit its Kodi Action or switch scope"
+msgstr ""
+
+msgctxt "#30049"
+msgid "Scope: [COLOR FFFFA800]%s[/COLOR] (Click to change)"
+msgstr ""
+
+msgctxt "#30050"
+msgid "Add New Key Binding"
+msgstr ""
+
+msgctxt "#30051"
+msgid "Edit Selected Action"
+msgstr ""
+
+msgctxt "#30052"
+msgid "Remove Selected Key"
+msgstr ""
+
+msgctxt "#30053"
+msgid "Switch Scope / Window"
+msgstr ""
+
+msgctxt "#30054"
+msgid "Reset Current Scope Keys"
+msgstr ""
+
+msgctxt "#30055"
+msgid "Save & Reload Keymaps"
+msgstr ""
+
+msgctxt "#30056"
+msgid "Close Window"
+msgstr ""
+
+# script-devtoolbox-qr.xml
+msgctxt "#30057"
+msgid "Log Uploaded Successfully"
+msgstr ""
+
+msgctxt "#30058"
+msgid "Scan QR code with your mobile camera or open the link below:"
+msgstr ""
+
+msgctxt "#30059"
+msgid "Done / Close"
+msgstr ""
+
+# Log Viewer appearance settings & WindowXML
+msgctxt "#30060"
+msgid "Log Viewer Style"
+msgstr ""
+
+msgctxt "#30061"
+msgid "Traditional TextViewer Dialog"
+msgstr ""
+
+msgctxt "#30062"
+msgid "Interactive Code Viewer (WindowXML)"
+msgstr ""
+
+msgctxt "#30063"
+msgid "Choose between Kodi's traditional textviewer dialog or the rich editor-styled WindowXML viewer"
+msgstr ""
+
+msgctxt "#30064"
+msgid "Select Log Viewer Style"
+msgstr ""
+
+msgctxt "#30065"
+msgid "Kodi Log Viewer"
+msgstr ""
+
+msgctxt "#30066"
+msgid "Toggle Error Filter"
+msgstr ""
+
+msgctxt "#30067"
+msgid "Upload Log"
+msgstr ""
+
+msgctxt "#30068"
+msgid "Refresh Log"
 msgstr ""

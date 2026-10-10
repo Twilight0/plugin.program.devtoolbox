@@ -35,7 +35,7 @@
                 <width>580</width>
                 <height>35</height>
                 <font>font14_title</font>
-                <label>Log Uploaded Successfully</label>
+                <label>$ADDON[plugin.program.devtoolbox 30057]</label>
                 <textcolor>FFFFFFFF</textcolor>
                 <align>center</align>
             </control>
@@ -47,7 +47,7 @@
                 <width>580</width>
                 <height>25</height>
                 <font>font12</font>
-                <label>Scan QR code with your mobile camera or open the link below:</label>
+                <label>$ADDON[plugin.program.devtoolbox 30058]</label>
                 <textcolor>FF8A9BA8</textcolor>
                 <align>center</align>
             </control>
@@ -79,7 +79,7 @@
                 <width>200</width>
                 <height>45</height>
                 <font>font12_title</font>
-                <label>Done / Close</label>
+                <label>$ADDON[plugin.program.devtoolbox 30059]</label>
                 <textcolor>FFFFFFFF</textcolor>
                 <focusedcolor>FF00D4FF</focusedcolor>
                 <align>center</align>

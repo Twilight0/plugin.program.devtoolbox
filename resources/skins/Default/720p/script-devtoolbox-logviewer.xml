@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <controls>
+        <!-- Background Dim -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/backgrounds/black.png</texture>
+            <colordiffuse>E6000000</colordiffuse>
+        </control>
+
+        <!-- Main Window Container -->
+        <control type="group">
+            <left>40</left>
+            <top>25</top>
+            <width>1200</width>
+            <height>670</height>
+
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1200</width>
+                <height>670</height>
+                <texture border="10">special://skin/media/white.png</texture>
+                <colordiffuse>FF141923</colordiffuse>
+            </control>
+
+            <!-- Window Header -->
+            <control type="label" id="1">
+                <left>25</left>
+                <top>15</top>
+                <width>750</width>
+                <height>30</height>
+                <font>font13_title</font>
+                <label>$ADDON[plugin.program.devtoolbox 30065] [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <!-- File Path & Status Header -->
+            <control type="label" id="2">
+                <left>25</left>
+                <top>45</top>
+                <width>850</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>FFFFA800</textcolor>
+            </control>
+
+            <!-- Log Lines List Container (Editor-styled numbered lines) -->
+            <control type="list" id="100">
+                <left>25</left>
+                <top>75</top>
+                <width>870</width>
+                <height>535</height>
+                <onleft>201</onleft>
+                <onright>201</onright>
+                <onup>100</onup>
+                <ondown>100</ondown>
+                <pagecontrol>110</pagecontrol>
+                <scrolltime>150</scrolltime>
+                <itemlayout height="36" width="870">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>870</width>
+                        <height>34</height>
+                        <texture>special://home/addons/plugin.program.devtoolbox/resources/media/item_bg.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>10</left>
+                        <top>5</top>
+                        <width>65</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FF5C6370</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="label">
+                        <left>80</left>
+                        <top>5</top>
+                        <width>780</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="36" width="870">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>870</width>
+                        <height>34</height>
+                        <texture>special://home/addons/plugin.program.devtoolbox/resources/media/item_focus.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>10</left>
+                        <top>5</top>
+                        <width>65</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FF00D4FF</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="label">
+                        <left>80</left>
+                        <top>5</top>
+                        <width>780</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Scrollbar for Log Lines List -->
+            <control type="scrollbar" id="110">
+                <left>900</left>
+                <top>75</top>
+                <width>12</width>
+                <height>535</height>
+                <texturesliderbackground>special://skin/media/white.png</texturesliderbackground>
+                <texturesliderbar>special://skin/media/white.png</texturesliderbar>
+                <texturesliderbarfocus>special://skin/media/white.png</texturesliderbarfocus>
+                <colordiffuse>30FFFFFF</colordiffuse>
+                <onleft>100</onleft>
+                <onright>201</onright>
+            </control>
+
+            <!-- Status bar at bottom -->
+            <control type="label" id="3">
+                <left>25</left>
+                <top>620</top>
+                <width>870</width>
+                <height>30</height>
+                <font>font11</font>
+                <textcolor>FF8A9BA8</textcolor>
+            </control>
+
+            <!-- Right Toolbar Buttons -->
+            <control type="grouplist" id="200">
+                <left>925</left>
+                <top>75</top>
+                <width>250</width>
+                <height>565</height>
+                <itemgap>10</itemgap>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <onup>200</onup>
+                <ondown>200</ondown>
+
+                <!-- Filter Errors Only Toggle -->
+                <control type="button" id="201">
+                    <width>250</width>
+                    <height>40</height>
+                    <font>font12</font>
+                    <label>$ADDON[plugin.program.devtoolbox 30066]</label>
+                    <textcolor>FFFF5555</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <!-- Refresh Log -->
+                <control type="button" id="202">
+                    <width>250</width>
+                    <height>40</height>
+                    <font>font12</font>
+                    <label>$ADDON[plugin.program.devtoolbox 30068]</label>
+                    <textcolor>FFFFA800</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <!-- Search / Find in Log -->
+                <control type="button" id="203">
+                    <width>250</width>
+                    <height>40</height>
+                    <font>font12</font>
+                    <label>$ADDON[plugin.program.devtoolbox 30042]</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <!-- View Selected Line Detail -->
+                <control type="button" id="204">
+                    <width>250</width>
+                    <height>40</height>
+                    <font>font12</font>
+                    <label>Inspect Line Text</label>
+                    <textcolor>FF00D4FF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <!-- Upload Log & QR -->
+                <control type="button" id="205">
+                    <width>250</width>
+                    <height>40</height>
+                    <font>font12</font>
+                    <label>$ADDON[plugin.program.devtoolbox 30067]</label>
+                    <textcolor>FF98C379</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+
+                <!-- Close Window -->
+                <control type="button" id="206">
+                    <width>250</width>
+                    <height>40</height>
+                    <font>font12</font>
+                    <label>$ADDON[plugin.program.devtoolbox 30034]</label>
+                    <textcolor>FFAAAAAA</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>
