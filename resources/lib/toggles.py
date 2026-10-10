@@ -57,3 +57,9 @@ def restart_kodi():
     dialog = xbmcgui.Dialog()
     if dialog.yesno("Dev Toolbox", "Do you want to restart Kodi?"):
         xbmc.executebuiltin("RestartApp")
+
+
+def quit_kodi():
+    dialog = xbmcgui.Dialog()
+    if dialog.yesno("Dev Toolbox", "Do you want to quit Kodi?"):
+        xbmc.executebuiltin("Quit")

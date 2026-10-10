@@ -109,3 +109,7 @@ msgstr ""
 msgctxt "#30023"
 msgid "Official Kodi Dependency / Addon Installer"
 msgstr ""
+
+msgctxt "#30024"
+msgid "Quit Kodi Application"
+msgstr ""

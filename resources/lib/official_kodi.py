@@ -275,31 +275,31 @@ def render_official_kodi_root(handle, base_url):
 
     items = [
         (
-            f"[COLOR FFFFA800]🔍 Search Official Kodi Repository...[/COLOR]",
+            f"[COLOR FFFFA800]Search Official Kodi Repository...[/COLOR]",
             f"Search across {len(all_addons)} official addons and python modules for Kodi {codename.capitalize()}",
             f"{base_url}?action=official_kodi_search&codename={codename}",
             True
         ),
         (
-            f"[COLOR FF00D4FF]📦 Python Modules & Dependencies ({len(modules)})[/COLOR]",
+            f"[COLOR FF00D4FF]Python Modules & Dependencies ({len(modules)})[/COLOR]",
             f"Browse and install script.module.* dependencies hidden by the native Kodi Addon Manager",
             f"{base_url}?action=official_kodi_browse&type=modules&codename={codename}",
             True
         ),
         (
-            f"[COLOR FF55FF55]📂 All Official Kodi Addons ({len(all_addons)})[/COLOR]",
+            f"[COLOR FF55FF55]All Official Kodi Addons ({len(all_addons)})[/COLOR]",
             f"Browse all official addons available in the {codename.capitalize()} repository mirror",
             f"{base_url}?action=official_kodi_browse&type=all&codename={codename}",
             True
         ),
         (
-            f"[COLOR FF8A9BA8]⌨️ Install by Addon ID Directly...[/COLOR]",
+            f"[COLOR FF8A9BA8]Install by Addon ID Directly...[/COLOR]",
             f"Manually input an addon or dependency ID (e.g., script.module.requests)",
             f"{base_url}?action=official_kodi_direct&codename={codename}",
             False
         ),
         (
-            f"[COLOR FF8A9BA8]🔄 Refresh Official Kodi Mirror Index[/COLOR]",
+            f"[COLOR FF8A9BA8]Refresh Official Kodi Mirror Index[/COLOR]",
             f"Re-fetch the directory index from {MIRRORS_BASE_URL}{codename}/",
             f"{base_url}?action=official_kodi_refresh&codename={codename}",
             False
@@ -334,7 +334,7 @@ def render_official_kodi_list(handle, base_url, codename, filter_type="modules",
 
     for addon_id in matched:
         installed = is_addon_installed(addon_id)
-        status_tag = " [COLOR FF55FF55]✓ Installed[/COLOR]" if installed else " [COLOR FF8A9BA8](Available)[/COLOR]"
+        status_tag = " [COLOR FF55FF55][Installed][/COLOR]" if installed else " [COLOR FF8A9BA8](Available)[/COLOR]"
         title = f"[COLOR FFFFFFFF]{addon_id}[/COLOR]{status_tag}"
 
         desc = f"Click to download and install {addon_id} from official mirrors.kodi.tv/addons/{codename}/"

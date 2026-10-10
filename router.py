@@ -10,7 +10,7 @@ import xbmcgui
 import xbmcplugin
 
 from resources.lib.editor import browse_and_open_editor
-from resources.lib.toggles import toggle_kodi_debug_logging, toggle_skin_debugging, reload_skin, restart_kodi
+from resources.lib.toggles import toggle_kodi_debug_logging, toggle_skin_debugging, reload_skin, restart_kodi, quit_kodi
 from resources.lib.addons_manager import (
     list_addons_directory,
     open_addon_settings,
@@ -147,6 +147,13 @@ def build_menu(handle, base_url):
             f"{base_url}?action=restart_kodi",
             False
         ),
+        (
+            "menu_quit_kodi",
+            "[COLOR FFFF5555]Quit Kodi Application[/COLOR]",
+            "Safely close and quit Kodi application",
+            f"{base_url}?action=quit_kodi",
+            False
+        ),
     ]
 
     icon_path, fanart_path = get_theme_art()
@@ -214,6 +221,8 @@ def run():
         reload_skin()
     elif action == "restart_kodi":
         restart_kodi()
+    elif action == "quit_kodi":
+        quit_kodi()
     elif action == "addons_list":
         list_addons_directory(handle, base_url)
     elif action == "addon_settings":
