@@ -94,12 +94,26 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
+				<setting id="menu_backup_restore" type="boolean" label="30070">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="menu_restart_kodi" type="boolean" label="30022">
 					<level>0</level>
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="menu_quit_kodi" type="boolean" label="30024">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
+		<category id="backup" label="30070">
+			<group id="1" label="30086">
+				<setting id="restore_force_close" type="boolean" label="30087" help="30088">
 					<level>0</level>
 					<default>true</default>
 					<control type="toggle"/>

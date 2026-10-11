@@ -42,6 +42,7 @@ from .official_kodi import (
     get_kodi_codename,
     get_cached_addons_list,
 )
+from .backup import show_backup_restore_menu
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo("id")
@@ -123,6 +124,13 @@ def build_menu(handle, base_url):
             "Search and install dependencies (script.module.*) and addons directly from mirrors.kodi.tv",
             f"{base_url}?action=official_kodi",
             True
+        ),
+        (
+            "menu_backup_restore",
+            "[COLOR FF00D4FF]Backup / Restore Kodi Installation[/COLOR]",
+            "Create sanitized single-file backup of addons and userdata or restore with version safety",
+            f"{base_url}?action=backup_restore",
+            False
         ),
         (
             "menu_change_theme",
@@ -330,3 +338,8 @@ def route_official_kodi_refresh(codename=None):
     get_cached_addons_list(cn, force_refresh=True)
     xbmcgui.Dialog().notification("Kodi Mirror", f"Refreshed {cn} index", xbmcgui.NOTIFICATION_INFO, 2000, sound=False)
     xbmc.executebuiltin("Container.Refresh")
+
+
+@urldispatcher.register("backup_restore")
+def route_backup_restore():
+    show_backup_restore_menu()

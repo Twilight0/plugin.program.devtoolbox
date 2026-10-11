@@ -116,7 +116,22 @@ Quick access to critical Kodi developer switches:
 
 <br>
 
-### 🎨 7. Dynamic Theme Engine & Texture Cache Isolation
+### 💾 7. Kodi Installation Backup & Restore Engine
+
+Comprehensive, cross-platform backup and restore functionality using native Kodi dialogs:
+
+- 📦 **Single-Archive Packaging**: Scans and bundles your entire `addons` and `userdata` directories into a single `.zip` file.
+- 🧹 **Automatic Sanitization**: Strips `__pycache__`, `.pyc`, `.log`, `.git`, temporary files, and obsolete packages to produce compact backups.
+- 🗄️ **Optional Database Backup**: Toggle whether to bundle SQLite databases (`Addons*.db`, `Textures*.db`, `MyVideos*.db`, etc.).
+- 🛡️ **Major Version Mismatch Protection**: Reads embedded archive manifest (`devtoolbox_manifest.json`) and blocks cross-version database restoration unless explicitly overridden by the user.
+- ⚠️ **Manifestless & Third-Party Archive Compatibility**: Automatically handles third-party backups with top-level root prefixes and warns users when restoring unverified archives without manifests.
+- 🔒 **Self-Preservation Architecture**: Protects `plugin.program.devtoolbox` during clean wipes and extraction to guarantee restorer stability and prevent mid-flight crashes or unwanted downgrades.
+- ⚡ **Database-Preserving Force Close (Default)**: Immediately terminates the Kodi process upon restore completion (`SIGKILL` / `taskkill /F`) to stop Kodi's shutdown hooks from flushing dirty in-memory database states over newly restored SQLite files.
+- 🔄 **Full Replace vs. Merge Restore Options**: Choose between a clean wipe & restore or non-destructively merging/updating components into your existing Kodi setup.
+
+<br>
+
+### 🎨 8. Dynamic Theme Engine & Texture Cache Isolation
 
 Kodi's internal texture cache (`Textures13.db`) caches images based on file path. Dev Toolbox eliminates stale cache issues by isolating artwork across distinct paths in [`resources/media/`](resources/media/):
 

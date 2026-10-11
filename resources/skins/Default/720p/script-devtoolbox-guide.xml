@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <controls>
+        <!-- Background Dim -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>special://skin/backgrounds/black.png</texture>
+            <colordiffuse>E6000000</colordiffuse>
+        </control>
+
+        <!-- Main Window Container -->
+        <control type="group">
+            <left>40</left>
+            <top>25</top>
+            <width>1200</width>
+            <height>670</height>
+
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1200</width>
+                <height>670</height>
+                <texture border="10">special://skin/media/white.png</texture>
+                <colordiffuse>FF141923</colordiffuse>
+            </control>
+
+            <!-- Window Header -->
+            <control type="label" id="1">
+                <left>25</left>
+                <top>15</top>
+                <width>850</width>
+                <height>30</height>
+                <font>font13_title</font>
+                <label>$ADDON[plugin.program.devtoolbox 30085] [COLOR FF00D4FF](Dev Toolbox)[/COLOR]</label>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <!-- File Path & Status Header -->
+            <control type="label" id="2">
+                <left>25</left>
+                <top>45</top>
+                <width>850</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>FFFFA800</textcolor>
+                <label>Backup &amp; Restore Strategy, Architecture &amp; Manifest Reference</label>
+            </control>
+
+            <!-- Guide Text Lines List Container -->
+            <control type="list" id="100">
+                <left>25</left>
+                <top>75</top>
+                <width>870</width>
+                <height>535</height>
+                <onleft>201</onleft>
+                <onright>201</onright>
+                <onup>100</onup>
+                <ondown>100</ondown>
+                <pagecontrol>110</pagecontrol>
+                <scrolltime>150</scrolltime>
+                <itemlayout height="34" width="870">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>870</width>
+                        <height>32</height>
+                        <texture>special://home/addons/plugin.program.devtoolbox/resources/media/item_bg.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>10</left>
+                        <top>4</top>
+                        <width>65</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FF5C6370</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="label">
+                        <left>80</left>
+                        <top>4</top>
+                        <width>780</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="34" width="870">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>870</width>
+                        <height>32</height>
+                        <texture>special://home/addons/plugin.program.devtoolbox/resources/media/item_focus.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>10</left>
+                        <top>4</top>
+                        <width>65</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="label">
+                        <left>80</left>
+                        <top>4</top>
+                        <width>780</width>
+                        <height>24</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Scrollbar for Guide List -->
+            <control type="scrollbar" id="110">
+                <left>905</left>
+                <top>75</top>
+                <width>14</width>
+                <height>535</height>
+                <texturesliderbackground border="2">special://skin/media/white.png</texturesliderbackground>
+                <texturesliderbar border="2">special://skin/media/white.png</texturesliderbar>
+                <texturesliderbarfocus border="2">special://skin/media/white.png</texturesliderbarfocus>
+                <colordiffuse>33FFFFFF</colordiffuse>
+                <orientation>vertical</orientation>
+                <onleft>100</onleft>
+                <onright>201</onright>
+            </control>
+
+            <!-- Status Footer -->
+            <control type="label" id="3">
+                <left>25</left>
+                <top>620</top>
+                <width>870</width>
+                <height>25</height>
+                <font>font11</font>
+                <textcolor>FF8A9BA8</textcolor>
+                <label>Navigate lines with Up/Down | Press Back or select Close to return</label>
+            </control>
+
+            <!-- Action Sidebar Container -->
+            <control type="grouplist" id="200">
+                <left>930</left>
+                <top>75</top>
+                <width>250</width>
+                <height>535</height>
+                <itemgap>10</itemgap>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <onup>201</onup>
+                <ondown>201</ondown>
+
+                <!-- Close Window Button -->
+                <control type="button" id="201">
+                    <width>250</width>
+                    <height>44</height>
+                    <font>font12</font>
+                    <label>$ADDON[plugin.program.devtoolbox 30034]</label>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_focus.png</texturefocus>
+                    <texturenofocus>special://home/addons/plugin.program.devtoolbox/resources/media/btn_nofocus.png</texturenofocus>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

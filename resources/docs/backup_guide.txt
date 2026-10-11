@@ -1,0 +1,67 @@
+[B][COLOR FFFFA800]Dev ToolBox — Kodi Backup & Restore User Guide[/COLOR][/B]
+
+[B][COLOR FF00D4FF]1. Overview[/COLOR][/B]
+The [B]Backup & Restore Engine[/B] creates clean, single-archive [COLOR FFE5C07B].zip[/COLOR] packages of your Kodi setup and restores them reliably across any platform ([I]Android, Linux, Windows, macOS, CoreELEC, and LibreELEC[/I]).
+
+[COLOR FF5C6370]────────────────────────────────────────────────────────[/COLOR]
+
+[B][COLOR FF00D4FF]2. Target Directories[/COLOR][/B]
+Backups exclusively target the two fundamental directories:
+[COLOR FF00D4FF]• [/COLOR][COLOR FFE5C07B]special://home/addons/[/COLOR] — All user installed addons, scripts, and skins.
+[COLOR FF00D4FF]• [/COLOR][COLOR FFE5C07B]special://masterprofile/[/COLOR] ([I]userdata[/I]) — Database configurations, keymaps, sources, passwords, and addon data.
+
+All other root folders (such as temporary caches and platform binaries) are completely redundant and excluded to minimize archive size.
+
+[COLOR FF5C6370]────────────────────────────────────────────────────────[/COLOR]
+
+[B][COLOR FF00D4FF]3. Automatic Sanitization & Cleaning[/COLOR][/B]
+Every archive is dynamically sanitized during compression to discard runtime garbage and private development metadata:
+[COLOR FF00D4FF]• [/COLOR][B]Excluded directories:[/B] [COLOR FFE5C07B]__pycache__[/COLOR], [COLOR FFE5C07B].git[/COLOR], [COLOR FFE5C07B].github[/COLOR], [COLOR FFE5C07B].idea[/COLOR], [COLOR FFE5C07B].vscode[/COLOR], [COLOR FFE5C07B]packages[/COLOR] ([I]cached addon zips[/I]), [COLOR FFE5C07B]Thumbnails[/COLOR] ([I]cached textures[/I]), and [COLOR FFE5C07B]temp[/COLOR].
+[COLOR FF00D4FF]• [/COLOR][B]Excluded files:[/B] [COLOR FFE5C07B].pyc[/COLOR], [COLOR FFE5C07B].pyo[/COLOR], [COLOR FFE5C07B]kodi.log[/COLOR], [COLOR FFE5C07B]kodi.old.log[/COLOR], [COLOR FFE5C07B].bak[/COLOR], [COLOR FFE5C07B].tmp[/COLOR], and OS cache files ([COLOR FFE5C07B].DS_Store[/COLOR], [COLOR FFE5C07B]Thumbs.db[/COLOR]).
+
+[COLOR FF5C6370]────────────────────────────────────────────────────────[/COLOR]
+
+[B][COLOR FF00D4FF]4. Databases (Database/*.db)[/COLOR][/B]
+Before backing up, you are prompted whether to bundle database files:
+[COLOR FF00D4FF]• [/COLOR][B]Includes:[/B] [COLOR FFE5C07B]AddonsXX.db[/COLOR], [COLOR FFE5C07B]TexturesXX.db[/COLOR], [COLOR FFE5C07B]MyVideosXXX.db[/COLOR], [COLOR FFE5C07B]MyMusicXX.db[/COLOR], [COLOR FFE5C07B]ViewModes.db[/COLOR].
+[COLOR FF00D4FF]• [/COLOR][B]Default:[/B] [COLOR FF55FF55]YES[/COLOR].
+[COLOR FF00D4FF]• [/COLOR][B]Note:[/B] Active Kodi database files are read safely from disk.
+
+[COLOR FF5C6370]────────────────────────────────────────────────────────[/COLOR]
+
+[B][COLOR FF00D4FF]5. The Manifest (devtoolbox_manifest.json)[/COLOR][/B]
+Every backup produced by Dev ToolBox embeds a metadata manifest at the archive root:
+[COLOR FF00D4FF]• [/COLOR]Originating Kodi version ([I]e.g., Kodi 21 "Omega", major integer 21[/I]).
+[COLOR FF00D4FF]• [/COLOR]Creation timestamp and platform build string.
+[COLOR FF00D4FF]• [/COLOR]Database inclusion status.
+[COLOR FF00D4FF]• [/COLOR]Total indexed file count.
+
+[B][COLOR FF98C379]Version Mismatch Safety Guard[/COLOR][/B]
+Databases and Python API bindings differ across major Kodi releases. When restoring an archive with a manifest:
+[COLOR FF00D4FF]• [/COLOR]If the archive was created on a different major Kodi release ([I]e.g. Kodi 20 vs 21[/I]), a high-visibility warning is displayed.
+[COLOR FF00D4FF]• [/COLOR]The restore is aborted unless you explicitly choose to override.
+
+[B][COLOR FF98C379]Archives Without a Manifest[/COLOR][/B]
+If you select a third-party archive or an older zip created without Dev ToolBox:
+[COLOR FF00D4FF]• [/COLOR]Dev ToolBox detects the absence of [COLOR FFE5C07B]devtoolbox_manifest.json[/COLOR].
+[COLOR FF00D4FF]• [/COLOR]A warning prompts you that the archive origin and Kodi version cannot be verified before proceeding.
+[COLOR FF00D4FF]• [/COLOR]Root path normalization automatically detects and strips any enclosing parent directories ([I]e.g. backup/addons/ -> addons/[/I]).
+
+[COLOR FF5C6370]────────────────────────────────────────────────────────[/COLOR]
+
+[B][COLOR FF00D4FF]6. Restore Strategies[/COLOR][/B]
+You can choose between two restore modes:
+[COLOR FFFFA800]1. [/COLOR][B]Full Replace (Clean Wipe):[/B]
+   Deletes existing addons and userdata before extraction to replicate the exact state of the backup.
+   [B][COLOR FF00D4FF]Self-Preservation:[/COLOR][/B] Dev ToolBox protects its own directory ([COLOR FFE5C07B]plugin.program.devtoolbox[/COLOR]) from deletion and overwrites, ensuring operational stability and preventing mid-restore crashes.
+[COLOR FFFFA800]2. [/COLOR][B]Merge / Update (Non-destructive):[/B]
+   Adds missing files and updates matching files without deleting other installed addons or settings.
+
+[COLOR FF5C6370]────────────────────────────────────────────────────────[/COLOR]
+
+[B][COLOR FF00D4FF]7. Post-Restore Process Termination (Force Close)[/COLOR][/B]
+Because Kodi holds live in-memory locks on active SQLite databases ([COLOR FFE5C07B]Addons*.db[/COLOR], [COLOR FFE5C07B]Textures*.db[/COLOR], [COLOR FFE5C07B]MyVideos*.db[/COLOR]) while running:
+[COLOR FF00D4FF]• [/COLOR]A graceful exit or restart ([COLOR FFE5C07B]RestartApp[/COLOR] / [COLOR FFE5C07B]Quit[/COLOR]) executes Kodi shutdown hooks that flush dirty in-memory database pages over the freshly extracted files on disk, corrupting or reverting your restored state!
+[COLOR FF00D4FF]• [/COLOR][B]Force Close (Default):[/B] Dev ToolBox immediately terminates the Kodi process ([COLOR FFE5C07B]SIGKILL[/COLOR] on Linux/Android/CoreELEC/macOS, [COLOR FFE5C07B]taskkill /F[/COLOR] and [COLOR FFE5C07B]os._exit(0)[/COLOR] on Windows). This bypasses in-memory flushing and guarantees all restored databases remain [B]100% intact[/B].
+[COLOR FF00D4FF]• [/COLOR]Once closed, simply re-launch Kodi normally.
+[COLOR FF00D4FF]• [/COLOR]This behavior can be toggled in Dev ToolBox Addon Settings under [B]Restore Options[/B].

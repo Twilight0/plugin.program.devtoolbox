@@ -276,3 +276,84 @@ msgstr ""
 msgctxt "#30068"
 msgid "Refresh Log"
 msgstr ""
+
+# Backup & Restore strings (30070 - 30085)
+msgctxt "#30070"
+msgid "Backup / Restore Kodi Installation"
+msgstr ""
+
+msgctxt "#30071"
+msgid "Create Backup Archive..."
+msgstr ""
+
+msgctxt "#30072"
+msgid "Restore from Backup Archive..."
+msgstr ""
+
+msgctxt "#30073"
+msgid "Include Databases (Addons, Textures, Videos, Music)"
+msgstr ""
+
+msgctxt "#30074"
+msgid "Creating Kodi Backup..."
+msgstr ""
+
+msgctxt "#30075"
+msgid "Restoring Kodi Backup..."
+msgstr ""
+
+msgctxt "#30076"
+msgid "Full Replace (Clean Restore)"
+msgstr ""
+
+msgctxt "#30077"
+msgid "Merge / Update (Add Missing Components)"
+msgstr ""
+
+msgctxt "#30078"
+msgid "Backup completed successfully!"
+msgstr ""
+
+msgctxt "#30079"
+msgid "Restore completed successfully! Kodi must be restarted now to apply changes."
+msgstr ""
+
+msgctxt "#30080"
+msgid "Restart Now"
+msgstr ""
+
+msgctxt "#30081"
+msgid "Restart Later"
+msgstr ""
+
+msgctxt "#30082"
+msgid "Kodi Version Mismatch Warning"
+msgstr ""
+
+msgctxt "#30083"
+msgid "Select Backup Zip File"
+msgstr ""
+
+msgctxt "#30084"
+msgid "Select Backup Destination Directory"
+msgstr ""
+
+msgctxt "#30085"
+msgid "Backup & Restore Guide"
+msgstr ""
+
+msgctxt "#30086"
+msgid "Restore Options"
+msgstr ""
+
+msgctxt "#30087"
+msgid "Force Close Kodi on Restore Completion"
+msgstr ""
+
+msgctxt "#30088"
+msgid "Instantly terminates Kodi process without running standard exit handlers that can overwrite restored databases."
+msgstr ""
+
+msgctxt "#30089"
+msgid "Force Close Now"
+msgstr ""
